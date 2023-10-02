@@ -1,7 +1,7 @@
 <h1 align="center">colab_stable_diffusion_webui</h1>
 <div align="center">
   <div>👇点击图片进入colab👇</div>
-  <a href="https://colab.research.google.com/github/Lxiantang/colab/blob/main/%E4%BA%91stable_diffusion(%E4%BF%AE%E5%A4%8D%E6%8C%96%E7%9F%BF%E5%AB%8C%E7%96%91).ipynb"><img src="./image/README/tmpktq2ywtz.png" width="768" height="512" alt="open in colab"></a> 
+  <a href="https://colab.research.google.com/github/Lxiantang/colab/blob/main/%E4%BA%91%E7%AB%AFSD.ipynb"><img src="./image/README/tmpktq2ywtz.png" width="768" height="512" alt="open in colab"></a> 
 </div>
 
 <div align="center">
