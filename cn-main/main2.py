@@ -34,7 +34,7 @@ def run_git_download():
  subprocess.run(f'git clone https://github.com/hako-mikan/sd-webui-lora-block-weight {params["dir"]}/extensions/sd-webui-lora-block-weight',shell=True)
  subprocess.run(f'git clone https://github.com/s9roll7/ebsynth_utility {params["dir"]}/extensions/ebsynth_utility',shell=True)
  if params["animatediff"]=="True":
-  subprocess.run(f'git clone https://github.com/guoyww/AnimateDiff {params["dir"]}/extensions/sd-webui-animatediff', shell=True)
+  subprocess.run(f'git clone https://github.com/continue-revolution/sd-webui-animatediff {params["dir"]}/extensions/sd-webui-animatediff', shell=True)
  end_time=time.time()
  print("已克隆git耗时：",end_time-start_time,"秒")
 def run_aria2c_download():
