@@ -33,6 +33,8 @@ def run_git_download():
  subprocess.run(f'git clone https://github.com/nonnonstop/sd-webui-3d-open-pose-editor {params["dir"]}/extensions/sd-webui-3d-open-pose-editor',shell=True)
  subprocess.run(f'git clone https://github.com/hako-mikan/sd-webui-lora-block-weight {params["dir"]}/extensions/sd-webui-lora-block-weight',shell=True)
  subprocess.run(f'git clone https://github.com/s9roll7/ebsynth_utility {params["dir"]}/extensions/ebsynth_utility',shell=True)
+ if params["animatediff"]=="True":
+  subprocess.run(f'git clone https://github.com/guoyww/AnimateDiff {params["dir"]}/extensions/sd-webui-animatediff', shell=True)
  end_time=time.time()
  print("已克隆git耗时：",end_time-start_time,"秒")
 def run_aria2c_download():
@@ -53,8 +55,11 @@ def run_aria2c_download():
  subprocess.run(f'aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11f1e_sd15_tile_fp16.safetensors -d {params["dir"]}/models/ControlNet -o control_v11f1e_sd15_tile_fp16.safetensors',shell=True)
  subprocess.run(f'aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/lokCX/4x-Ultrasharp/resolve/main/4x-UltraSharp.pth -d {params["dir"]}/models/ESRGAN/ -o 4x-UltraSharp.pth',shell=True)
  subprocess.run(f'aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/datasets/daasd/CN.csv/resolve/main/CN.csv -d {params["dir"]}/extensions/a1111-sd-webui-tagcomplete/tags -o CN.csv',shell=True)
+ if params["animatediff"]=="True":
+  subprocess.run(f'aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/guoyww/animatediff/resolve/main/mm_sd_v15_v2.ckpt -d {params["dir"]}/extensions/sd-webui-animatediff/model -o mm_sd_v15_v2.ckpt',shell=True)
  end_time=time.time()
  print("aria2c完成下载耗时：",end_time-start_time,"秒")
+ 
 def curl_download():
  start_time=time.time()
  subprocess.run(f"curl -Lo '{params['dir']}/models/VAE/vae-ft-mse-840000-ema-pruned.safetensors' https://huggingface.co/stabilityai/sd-vae-ft-mse-original/resolve/main/vae-ft-mse-840000-ema-pruned.safetensors",shell=True)
