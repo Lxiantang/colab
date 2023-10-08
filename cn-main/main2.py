@@ -16,11 +16,11 @@ for arg in sys.argv[1:]:
 subprocess.run(f'cd {params["dir"]}/',shell=True)
 if params["ui"]=="anapnoe手机端完美适配":
  subprocess.run(f'git clone https://github.com/anapnoe/stable-diffusion-webui {params["dir"]}',shell=True)
-elif params["ui"]=="AUTOMATIC1111原版v1.3.0(稳定)":
- subprocess.run(f'git clone -b v1.3.0 --single-branch https://github.com/AUTOMATIC1111/stable-diffusion-webui {params["dir"]}',shell=True)
+elif params["ui"]=="V1.6SDXL":
+ subprocess.run(f'git clone -b v1.6.0 --single-branch https://github.com/AUTOMATIC1111/stable-diffusion-webui {params["dir"]}',shell=True)
 else:
  subprocess.run(f'git clone -b v1.5.1 --single-branch https://github.com/AUTOMATIC1111/stable-diffusion-webui {params["dir"]}',shell=True)
-checkpoint_url={"Dark_sushi_mix.safetensors":"https://huggingface.co/mdl-mirror/dark-sushi-mix/resolve/main/darkSushiMixMix_brighter.safetensors","AnythingV5V3_v5PrtRE.safetensors":"https://huggingface.co/ckpt/anything-v5.0/resolve/main/AnythingV5V3_v5PrtRE.safetensors","chilloutmix_NiPrunedFp16Fix.safetensors":"https://huggingface.co/naonovn/chilloutmix_NiPrunedFp32Fix/resolve/main/chilloutmix_NiPrunedFp32Fix.safetensors","rpg_V4.safetensors":"https://huggingface.co/Anashel/rpg/resolve/main/RPG-V4-Model-Download/RPG-v4.safetensors","ProtoGen_X5.8-pruned-fp16.safetensors":"https://huggingface.co/darkstorm2150/Protogen_x5.8_Official_Release/resolve/main/ProtoGen_X5.8-pruned-fp16.safetensors","none":""}
+checkpoint_url={"Dark_sushi_mix.safetensors":"https://huggingface.co/mdl-mirror/dark-sushi-mix/resolve/main/darkSushiMixMix_brighter.safetensors","AnythingV5V3_v5PrtRE.safetensors":"https://huggingface.co/ckpt/anything-v5.0/resolve/main/AnythingV5V3_v5PrtRE.safetensors","chilloutmix_NiPrunedFp16Fix.safetensors":"https://huggingface.co/naonovn/chilloutmix_NiPrunedFp32Fix/resolve/main/chilloutmix_NiPrunedFp32Fix.safetensors","rpg_V4.safetensors":"https://huggingface.co/Anashel/rpg/resolve/main/RPG-V4-Model-Download/RPG-v4.safetensors","ProtoGen_X5.8-pruned-fp16.safetensors":"https://huggingface.co/darkstorm2150/Protogen_x5.8_Official_Release/resolve/main/ProtoGen_X5.8-pruned-fp16.safetensors","sd-xl.safetensors":"https://civitai.com/api/download/models/128078","none":""}
 def run_git_download():
  start_time=time.time()
  subprocess.run(f'git clone https://github.com/Physton/sd-webui-prompt-all-in-one {params["dir"]}/extensions/sd-webui-prompt-all-in-one',shell=True)
