@@ -33,6 +33,7 @@ def run_git_download():
  subprocess.run(f'git clone https://github.com/nonnonstop/sd-webui-3d-open-pose-editor {params["dir"]}/extensions/sd-webui-3d-open-pose-editor',shell=True)
  subprocess.run(f'git clone https://github.com/hako-mikan/sd-webui-lora-block-weight {params["dir"]}/extensions/sd-webui-lora-block-weight',shell=True)
  subprocess.run(f'git clone https://github.com/s9roll7/ebsynth_utility {params["dir"]}/extensions/ebsynth_utility',shell=True)
+ subprocess.run(f'git clone https://github.com/etherealxx/batchlinks-webui {params["dir"]}/extensions/batchlinks-webui',shell=True)
  if params["animatediff"]=="True":
   subprocess.run(f'git clone https://github.com/continue-revolution/sd-webui-animatediff.git {params["dir"]}/extensions/sd-webui-animatediff', shell=True)
  end_time=time.time()
