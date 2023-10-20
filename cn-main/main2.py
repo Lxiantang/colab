@@ -83,9 +83,6 @@ def wget_download():
  os.environ["LD_PRELOAD"]="libtcmalloc.so.4"
  os.environ["TF_CPP_MIN_LOG_LEVEL"]="3"
  subprocess.run("sudo apt-get install sox ffmpeg libcairo2 libcairo2-dev",shell=True) 
-# subprocess.run('apt -y update -qq', shell=True)
-# subprocess.run('wget https://huggingface.co/xiantang/xiantang_colab/resolve/main/libtcmalloc_minimal.so.4 -O /content/libtcmalloc_minimal.so.4', shell=True)
-# os.environ['LD_PRELOAD'] = '/content/libtcmalloc_minimal.so.4'
  end_time=time.time()
  print("wget完成下载耗时：",end_time-start_time,"秒")
 def pip_download():
@@ -96,14 +93,6 @@ def pip_download():
  end_time=time.time()
  print("pip完成下载耗时：",end_time-start_time,"秒")
 
-#def wget_download():
-# start_time=time.time()
-# subprocess.run("apt install libunwind8-dev -yqq",shell=True)
-# os.environ["LD_PRELOAD"]="libtcmalloc.so.4"
-# os.environ["TF_CPP_MIN_LOG_LEVEL"]="3"
-# subprocess.run("sudo apt-get install sox ffmpeg libcairo2 libcairo2-dev",shell=True)
-# end_time=time.time()
-# print("wget完成下载耗时：",end_time-start_time,"秒")
 #def pip_download():
 # start_time=time.time()
 # subprocess.run("pip install xformers xformers==0.0.20",shell=True)
