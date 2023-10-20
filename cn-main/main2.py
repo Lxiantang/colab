@@ -77,34 +77,34 @@ def curl_download():
  end_time=time.time()
  print("curl完成下载耗时：",end_time-start_time,"秒")
  
-#def wget_download():
-# start_time=time.time()
-# subprocess.run('apt -y update -qq', shell=True)
-# subprocess.run('wget https://huggingface.co/xiantang/xiantang_colab/resolve/main/libtcmalloc_minimal.so.4 -O /content/libtcmalloc_minimal.so.4', shell=True)
-# os.environ['LD_PRELOAD'] = '/content/libtcmalloc_minimal.so.4'
-# end_time=time.time()
-# print("wget完成下载耗时：",end_time-start_time,"秒")
-#def pip_download():
-# start_time=time.time()
-# subprocess.run('apt -y update -qq', shell=True)
-# subprocess.run('wget https://huggingface.co/xiantang/xiantang_colab/resolve/main/libtcmalloc_minimal.so.4 -O /content/libtcmalloc_minimal.so.4', shell=True)
-# os.environ['LD_PRELOAD'] = '/content/libtcmalloc_minimal.so.4'
-# end_time=time.time()
-# print("pip完成下载耗时：",end_time-start_time,"秒")
-
 def wget_download():
  start_time=time.time()
- subprocess.run("apt install libunwind8-dev -yqq",shell=True)
- os.environ["LD_PRELOAD"]="libtcmalloc.so.4"
- os.environ["TF_CPP_MIN_LOG_LEVEL"]="3"
- subprocess.run("sudo apt-get install sox ffmpeg libcairo2 libcairo2-dev",shell=True)
+ subprocess.run('apt -y update -qq', shell=True)
+ subprocess.run('wget https://huggingface.co/xiantang/xiantang_colab/resolve/main/libtcmalloc_minimal.so.4 -O /content/libtcmalloc_minimal.so.4', shell=True)
+ os.environ['LD_PRELOAD'] = '/content/libtcmalloc_minimal.so.4'
  end_time=time.time()
  print("wget完成下载耗时：",end_time-start_time,"秒")
 def pip_download():
  start_time=time.time()
- subprocess.run("pip install xformers xformers==0.0.20",shell=True)
+ subprocess.run('apt -y install -qq aria2 libcairo2-dev pkg-config python3-dev', shell=True)
+ subprocess.run('pip install -q torch==2.0.1+cu118 torchvision==0.15.2+cu118 torchaudio==2.0.2+cu118 torchtext==0.15.2 torchdata==0.6.1 --extra-index-url https://download.pytorch.org/whl/cu118 -U', shell=True)
+ subprocess.run('pip install -q xformers==0.0.20 triton==2.0.0 gradio_client==0.2.7 -U', shell=True)
  end_time=time.time()
  print("pip完成下载耗时：",end_time-start_time,"秒")
+
+#def wget_download():
+# start_time=time.time()
+# subprocess.run("apt install libunwind8-dev -yqq",shell=True)
+# os.environ["LD_PRELOAD"]="libtcmalloc.so.4"
+# os.environ["TF_CPP_MIN_LOG_LEVEL"]="3"
+# subprocess.run("sudo apt-get install sox ffmpeg libcairo2 libcairo2-dev",shell=True)
+# end_time=time.time()
+# print("wget完成下载耗时：",end_time-start_time,"秒")
+#def pip_download():
+# start_time=time.time()
+# subprocess.run("pip install xformers xformers==0.0.20",shell=True)
+# end_time=time.time()
+# print("pip完成下载耗时：",end_time-start_time,"秒")
 
 executor=concurrent.futures.ThreadPoolExecutor(max_workers=5)
 task1=executor.submit(run_git_download)
